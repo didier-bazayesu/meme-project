@@ -1,4 +1,11 @@
-export default function MordorMeme() {
+import { useState } from "react";
+
+
+export default function MordorMeme({meme}) {
+    
+   
+
+
     return (
         <section className="flex items-center justify-center min-h-screen -mt-32">
             <div className="relative inline-block">
@@ -22,12 +29,12 @@ export default function MordorMeme() {
                         zIndex: 10,
                     }}
                 >
-                    One does not simply
+                    {meme.topText}
                 </div>
 
                 {/* Meme Image */}
                 <img
-                    src="http://i.imgflip.com/1bij.jpg"
+                    src={meme.imageUrl}
                     alt="One does not simply walk into Mordor"
                     style={{ display: "block", width: "500px", maxWidth: "100%", height: "auto" }}
                 />
@@ -51,7 +58,7 @@ export default function MordorMeme() {
                         zIndex: 10,
                     }}
                 >
-                    Walk into Mordor
+                    {meme.bottomText}
                 </div>
 
             </div>
